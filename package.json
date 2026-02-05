@@ -1,0 +1,42 @@
+{
+  "name": "plugin-alarm",
+  "version": "1.0.0",
+  "description": "Claude Code alarm plugin for notification on user input waiting",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "plugin-alarm": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/cli.ts --format esm --dts",
+    "dev": "tsup src/index.ts src/cli.ts --format esm --dts --watch",
+    "postbuild": "chmod +x dist/cli.js",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "notification",
+    "alarm",
+    "desktop-notification"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-notifier": "^10.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/node-notifier": "^8.0.5",
+    "@vitest/ui": "^1.0.4",
+    "@vitest/coverage-v8": "^1.0.4",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
